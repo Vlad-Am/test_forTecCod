@@ -21,14 +21,14 @@ def simple_sort(a, b):
     if a < b:
         return [i for i in range(a, b + 1) if is_simple(i)]
     elif a == b:
-        return is_simple(a)
+        if is_simple(a):
+            return [a]
+        else:
+            return []
     else:
         c = b
         b = a
         return [i for i in range(c, b + 1) if is_simple(i)]
-
-
-simple_sort(100, 1)
 
 
 class Point:
